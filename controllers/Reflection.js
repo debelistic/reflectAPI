@@ -22,7 +22,7 @@ const Reflection = {
       * @return {object} reflection array
       */
      getAll(req, res){
-         const reflections = Reflection.findAll();
+         const reflections = ReflectionModel.findAll();
          return res.status(200).send(reflections)
      },
      getOne(req, res){
@@ -55,9 +55,11 @@ const Reflection = {
      delete(req, res) {
          const reflection = ReflectionModel.findOne(req.params.id);
          if (!reflection){
-             return res.status(404).send({"message": "refflection not found"});
+             return res.status(404).send({"message": "reflection not found"});
          }
          const ref = ReflectionModel.delete(req.params.id);
          return res.status(204).send(ref);
      }
 }
+
+export default Reflection

@@ -15,7 +15,7 @@ class Reflection {
      * @return {object} reflection object
      */
 
-     create() {
+     create(data) {
          const newReflection = {
              id: uuid.v4(),
              succes: data.succes || "",
