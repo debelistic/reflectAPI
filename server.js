@@ -13,7 +13,7 @@ app.post('/api/v1/reflections', Reflection.create);
 app.get('/api/v1/reflections', Reflection.getAll);
 app.get('/api/v1/reflections/:id', Reflection.getOne);
 app.put('/api/v1/reflections/:id', Reflection.update);
-app.delete('/api/v1/reflections', Reflection.delete);
+app.delete('/api/v1/reflections/:id', Reflection.delete);
 
 const port = process.env.PORT || 3000;
 
