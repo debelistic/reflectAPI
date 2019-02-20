@@ -1,6 +1,11 @@
 import express from "express";
-import Reflection from "./usingJSObjects/controllers/Reflection";
+import dotenv from "dotenv";
+import "babel-polyfill";
+import ReflectionWithDB from "./usingDB/controllers/Reflection"
+import ReflectionWithJsObject from "./usingJSObjects/controllers/Reflection";
 
+dotenv.config();
+const Reflection = process.env.TYPE === 'db' ? ReflectionWithDB : ReflectionWithJsObject;
 const app = express();
 
 app.use(express.json());
