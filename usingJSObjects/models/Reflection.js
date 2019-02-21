@@ -18,7 +18,7 @@ class Reflection {
      create(data) {
          const newReflection = {
              id: uuid.v4(),
-             succes: data.succes || "",
+             success: data.success || "",
              lowPoint: data.lowPoint || "",
              takeAway: data.takeAway || "",
              createdDate: moment.now(),
@@ -50,7 +50,7 @@ class Reflection {
         const refelction = this.findOne(id);
         const index = this.reflections.indexOf(refelction);
 
-        this.reflections[index].succes = data['succes'] || refelction.succes;
+        this.reflections[index].success = data['succes'] || refelction.success;
         this.reflections[index].lowPoint = data['lowPoint'] || reflection.lowPoint;
         this.reflections[index].takeAway = data['takeAway'] || refelction.takeAway;
         this.reflections[index].modifiedDate = moment.now()
